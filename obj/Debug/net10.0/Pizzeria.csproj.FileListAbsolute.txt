@@ -1,0 +1,42 @@
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfo.cs
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.exe
+C:\Users\user\Desktop\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.deps.json
+C:\Users\user\Desktop\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.runtimeconfig.json
+C:\Users\user\Desktop\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\refint\Pizzeria.dll
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.genruntimeconfig.cache
+C:\Users\user\Desktop\Arq de software\Pizzeria\obj\Debug\net10.0\ref\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.exe
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.deps.json
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.runtimeconfig.json
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfo.cs
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\refint\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.genruntimeconfig.cache
+C:\Users\user\Desktop\Pizzeria2 (2)\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\ref\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.exe
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.deps.json
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.runtimeconfig.json
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\bin\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.AssemblyInfo.cs
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\refint\Pizzeria.dll
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.pdb
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\Pizzeria.genruntimeconfig.cache
+C:\Users\user\Desktop\Pizzeria3\Pizzeria2\Arq de software\Pizzeria\obj\Debug\net10.0\ref\Pizzeria.dll
