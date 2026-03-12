@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\bin\Debug\net9.0\Pizzeria.exe
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\bin\Debug\net9.0\Pizzeria.deps.json
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\bin\Debug\net9.0\Pizzeria.runtimeconfig.json
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\bin\Debug\net9.0\Pizzeria.dll
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\bin\Debug\net9.0\Pizzeria.pdb
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.sourcelink.json
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.dll
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\refint\Pizzeria.dll
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.pdb
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\Pizzeria.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\SARA\SEMESTRE_2026-1\ARQUITECTURA_SOFTWARE\Pizzeria\obj\Debug\net9.0\ref\Pizzeria.dll

@@ -2,9 +2,11 @@ namespace Pizzeria.Domain.Productos
 {
   public class Normal : Pizza
     {
-        private double PrecioBase { get; }
+        public double PrecioBase { get; set; }
 
-        public string Sabor { get; private set; }
+        public string Sabor { get; set; }
+
+        public Normal() { }
 
         public Normal(string tamano, string sabor)
         {
