@@ -2,7 +2,7 @@ namespace Pizzeria.Domain.Pedidos
 {
     public class DomicilioRappi : Pedido
     {
-        public string Direccion { get; set; }
+        public string Direccion { get; set; } = string.Empty;
         public double Comision { get; set; } = 0.15;
 
         public override double CalcularCostoAdicional()

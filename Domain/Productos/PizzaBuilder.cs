@@ -4,6 +4,7 @@ namespace Pizzeria.Domain.Productos
 {
     public interface PizzaBuilder
     {
+        PizzaBuilder SetNombre(string nombre);
         PizzaBuilder SetTamano(string tamano);
         PizzaBuilder SetIngredientes(List<Ingrediente> ingredientes);
         PizzaBuilder SetPrecioBase(double precio);

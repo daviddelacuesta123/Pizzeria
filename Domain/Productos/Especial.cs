@@ -2,9 +2,10 @@ namespace Pizzeria.Domain.Productos
 {
     public class Especial : Pizza
     {
-        private double PrecioBase { get; }
+        public double PrecioBase { get; set; }
+        public string Sabor { get; set; } = string.Empty;
 
-        public string Sabor { get; private set; }
+        public Especial() { }
 
         public Especial(string tamano, string sabor)
         {

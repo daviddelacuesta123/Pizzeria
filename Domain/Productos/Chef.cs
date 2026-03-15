@@ -20,7 +20,6 @@ namespace Pizzeria.Domain.Productos
         {
             return _builder
                 .SetTamano(tamano)
-                .SetPrecioBase(20000)
                 .Build();
         }
 
@@ -29,7 +28,6 @@ namespace Pizzeria.Domain.Productos
             return _builder
                 .SetTamano(tamano)
                 .SetIngredientes(ingredientes)
-                .SetPrecioBase(20000)
                 .Build();
         }
     }

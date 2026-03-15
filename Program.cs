@@ -16,97 +16,65 @@ namespace Pizzeria
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=======================================");
-            Console.WriteLine("    PIZZERIA - DEMOSTRACIÓN DE PATRONES");
-            Console.WriteLine("=======================================\n");
-
-            // 1. PATRÓN BUILDER & PRODUCTOS
-            Console.WriteLine("--- 1. PATRÓN BUILDER ---");
-            var normalBuilder = new PizzaNormalBuilder();
-            var chef = new Chef(normalBuilder);
+            var menu = new MenuService();
+            var facturacion = new FacturaService(new FidelizacionService());
+            var pagoService = new PagoService();
             
-            Pizza pizzaNormal = chef.ConstruirPizzaEstandar("Grande");
-            Console.WriteLine($"Chef construyó: {pizzaNormal.Nombre} ({pizzaNormal.Tamano})");
+            menu.MostrarEncabezado();
 
-            var estofadaBuilder = new PizzaEstofadaBuilder();
-            chef.SetBuilder(estofadaBuilder);
-            Pizza pizzaEstofada = chef.ConstruirPizzaPersonalizada("Mediana", new List<Ingrediente> { 
-                new Ingrediente { Nombre = "Pepperoni", PrecioExtra = 3000, EsExtra = true } 
-            });
-            Console.WriteLine($"Chef construyó: {pizzaEstofada.Nombre} ({pizzaEstofada.Tamano})\n");
-
-            // 2. PATRÓN DECORATOR
-            Console.WriteLine("--- 2. PATRÓN DECORATOR ---");
-            Console.WriteLine($"Precio base pizza normal: ${pizzaNormal.CalcularPrecio()}");
+            // 1. Registro interactivo de cliente
+            Cliente cliente = menu.CrearCliente();
             
-            // Decorar la pizza con ingredientes adicionales
-            pizzaNormal = new Pizzeria.Domain.Productos.Decorators.QuesoExtra(pizzaNormal);
-            pizzaNormal = new Pizzeria.Domain.Productos.Decorators.Tocineta(pizzaNormal);
-            pizzaNormal = new Pizzeria.Domain.Productos.Decorators.Champinones(pizzaNormal);
-            
-            Console.WriteLine($"Precio pizza normal decorada (Queso, Tocineta, Champiñones): ${pizzaNormal.CalcularPrecio()}\n");
-
-            // 3. PATRÓN OBSERVER
-            Console.WriteLine("--- 3. PATRÓN OBSERVER ---");
-            Cliente cliente = new Cliente { Nombre = "Juan Perez", FechaNacimiento = DateTime.Now }; // Hoy es su cumple
+            // 2. Seleccionar y personalizar pizza (Builder + Decorator)
             Pedido pedido = new Local { Cliente = cliente };
-            pedido.AgregarProducto(new ItemPedido { Producto = pizzaNormal, Cantidad = 1 });
-
-            var notificador = new NotificadorCliente("WhatsApp");
-            var notificadorCumple = new NotificadorCumpleanos();
-
-            pedido.Suscribir(notificador);
-            pedido.Suscribir(notificadorCumple);
-            
-            Console.WriteLine("Notificando cambio de estado inicial:");
-            pedido.Notificar(); // Debería disparar ambos notificadores
-            Console.WriteLine();
-
-            // 4. PATRON STATE
-            Console.WriteLine("--- 4. PATRÓN STATE ---");
-            Console.WriteLine($"Estado actual de la pizza: {pizzaNormal.GetEstado().GetNombre()}");
-            pizzaNormal.ManejarEstado(); // Cambia a En Preparación
-            Console.WriteLine($"Nuevo estado (tras ManejarEstado): {pizzaNormal.GetEstado().GetNombre()}");
-            pedido.Notificar(); // Notificar el nuevo estado
-            Console.WriteLine();
-
-            // 5. PATRÓN COMMAND
-            Console.WriteLine("--- 5. PATRÓN COMMAND ---");
-            Cocina cocina = new Cocina();
-            Command prepararCmd = new PrepararPizzaCommand(pizzaNormal, cocina);
-            
-            Console.WriteLine("Ejecutando comando PrepararPizza...");
-            cocina.EjecutarComando(prepararCmd);
-            Console.WriteLine($"Estado tras comando: {pizzaNormal.GetEstado().GetNombre()}");
-            
-            Console.WriteLine("Deshaciendo el último comando...");
-            cocina.DeshacerUltimo();
-            Console.WriteLine($"Estado tras deshacer: {pizzaNormal.GetEstado().GetNombre()}\n");
-
-            // 6. PATRÓN MEMENTO
-            Console.WriteLine("--- 6. PATRÓN MEMENTO ---");
-            HistorialPedidos historial = new HistorialPedidos();
-            
-            Console.WriteLine("Guardando el estado actual del pedido en el historial...");
-            historial.Guardar(pedido.GuardarMemento());
-            
-            // Cambiar algo en el pedido
-            pizzaNormal.CambiarEstado(new Pizzeria.Domain.Productos.Estados.EnCamino());
-            Console.WriteLine($"Estado actual cambiado a: {pizzaNormal.GetEstado().GetNombre()}");
-            
-            Console.WriteLine("Restaurando el pedido desde el historial...");
-            var memento = historial.Restaurar(0);
-            if (memento != null)
+            bool ordenarMas = true;
+            while (ordenarMas)
             {
-                Console.WriteLine($"Estado restaurado: {memento.GetEstado()}");
-                Console.WriteLine($"Fecha del snapshot: {memento.GetFecha()}");
-                Console.WriteLine($"Total en el snapshot: ${memento.GetTotalCliente()}");
+                Pizza pizza = menu.SeleccionarYPersonalizarPizza();
+                pedido.AgregarProducto(new ItemPedido { Producto = pizza, Cantidad = 1 });
+                
+                Console.Write("\n¿Desea agregar otra pizza? (s/n): ");
+                ordenarMas = Console.ReadLine()?.ToLower() == "s";
             }
 
-            Console.WriteLine("\n=======================================");
-            Console.WriteLine("    DEMOSTRACIÓN FINALIZADA");
-            Console.WriteLine("=======================================");
+            // 3. Agregar otros productos (NUEVO)
+            menu.AgregarProductosAdicionales(pedido);
+
+            // 4. Seleccionar tipo de entrega (REORDENADO)
+            Pedido pedidoFinal = menu.IniciarPedido(cliente);
+            // Transferir items del pedido temporal al final
+            foreach(var item in pedido.Items) {
+                pedidoFinal.AgregarProducto(item);
+            }
+            pedido = pedidoFinal;
             
+            // 5. Notificadores (Observer)
+            pedido.Suscribir(new NotificadorCliente("SMS"));
+            pedido.Suscribir(new NotificadorCumpleanos());
+
+            // 6. Gestión de cocina (Command + State)
+            Console.WriteLine("\n--- PROCESANDO PEDIDO EN COCINA ---");
+            Cocina cocina = new Cocina();
+            
+            foreach(var item in pedido.Items)
+            {
+                if (item.Producto is Pizza p)
+                {
+                    Command cmd = new PrepararPizzaCommand(p, cocina);
+                    cocina.EjecutarComando(cmd);
+                    pedido.Notificar(); // Notifica el cambio a "En Preparación"
+                }
+            }
+
+            // 7. Confirmación Final (Memento if needed, but here simple flow)
+            Console.WriteLine("\n--- PAGO Y FACTURACIÓN ---");
+            IMedioPago medioPago = pagoService.SeleccionarMedioPago();
+            
+            var factura = facturacion.GenerarFactura(pedido, medioPago);
+            
+            // Imprimir Factura Final Detallada
+            factura.ImprimirFactura();
+
             Console.WriteLine("\nPresione cualquier tecla para salir...");
             Console.ReadKey();
         }

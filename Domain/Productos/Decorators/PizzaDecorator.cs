@@ -8,6 +8,7 @@ namespace Pizzeria.Domain.Productos.Decorators
         {
             _pizzaDecorada = pizza;
             // Copiar los atributos principales de la pizza base
+            this.Nombre = pizza.Nombre;
             this.Tamano = pizza.Tamano;
             this.Ingredientes = pizza.Ingredientes;
         }

@@ -12,8 +12,8 @@ namespace Pizzeria.Domain.Facturacion
         public double Descuento { get; set; }
         public double CostoAdicional { get; set; }
         public double Total { get; set; }
-        public Pedido Pedido { get; set; }
-        public IMedioPago MedioPago { get; set; }
+        public Pedido Pedido { get; set; } = null!;
+        public IMedioPago MedioPago { get; set; } = null!;
 
         public void ImprimirFactura()
         {
@@ -31,7 +31,7 @@ namespace Pizzeria.Domain.Facturacion
             // TIPO DE PEDIDO
             string tipoPedido = Pedido switch
             {
-                DomicilioPropio => "Domicilio Propio",
+                DomicilioPropio => "Domicilio propio del local",
                 DomicilioRappi => "Domicilio Rappi",
                 Local => "Local",
                 _ => "N/A"

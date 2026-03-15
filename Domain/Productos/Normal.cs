@@ -4,7 +4,7 @@ namespace Pizzeria.Domain.Productos
     {
         public double PrecioBase { get; set; }
 
-        public string Sabor { get; set; }
+        public string Sabor { get; set; } = string.Empty;
 
         public Normal() { }
 

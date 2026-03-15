@@ -2,15 +2,15 @@ using System.Collections.Generic;
 
 namespace Pizzeria.Domain.Productos
 {
-    public class PizzaNormalBuilder : PizzaBuilder
+    public class PizzaEspecialBuilder : PizzaBuilder
     {
-        private Normal _pizza;
+        private Especial _pizza;
 
-        public PizzaNormalBuilder()
+        public PizzaEspecialBuilder()
         {
-            _pizza = new Normal();
-            _pizza.Nombre = "Pizza Normal Personalizada";
-            _pizza.Sabor = "Estandar";
+            _pizza = new Especial();
+            _pizza.Nombre = "Pizza Especial Personalizada";
+            _pizza.Sabor = "Especial";
         }
 
         public PizzaBuilder SetNombre(string nombre)

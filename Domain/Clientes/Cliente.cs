@@ -3,8 +3,8 @@ namespace Pizzeria.Domain.Clientes
     public class Cliente
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Telefono { get; set; }
+        public string Nombre { get; set; } = string.Empty;
+        public string Telefono { get; set; } = string.Empty;
         public DateTime FechaNacimiento { get; set; }
         public int Puntos { get; set; }
 

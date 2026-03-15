@@ -12,6 +12,12 @@ namespace Pizzeria.Domain.Productos
             _pizza.Nombre = "Pizza Estofada Personalizada";
         }
 
+        public PizzaBuilder SetNombre(string nombre)
+        {
+            _pizza.Nombre = nombre;
+            return this;
+        }
+
         public PizzaBuilder SetTamano(string tamano)
         {
             _pizza.Tamano = tamano;
