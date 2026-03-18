@@ -19,12 +19,12 @@ namespace Pizzeria
             var menu = new MenuService();
             var facturacion = new FacturaService(new FidelizacionService());
             var pagoService = new PagoService();
-            
+
             menu.MostrarEncabezado();
 
             // 1. Registro interactivo de cliente
             Cliente cliente = menu.CrearCliente();
-            
+
             // 2. Seleccionar y personalizar pizza (Builder + Decorator)
             Pedido pedido = new Local { Cliente = cliente };
             bool ordenarMas = true;
@@ -32,7 +32,7 @@ namespace Pizzeria
             {
                 Pizza pizza = menu.SeleccionarYPersonalizarPizza();
                 pedido.AgregarProducto(new ItemPedido { Producto = pizza, Cantidad = 1 });
-                
+
                 Console.Write("\n¿Desea agregar otra pizza? (s/n): ");
                 ordenarMas = Console.ReadLine()?.ToLower() == "s";
             }
@@ -43,11 +43,12 @@ namespace Pizzeria
             // 4. Seleccionar tipo de entrega (REORDENADO)
             Pedido pedidoFinal = menu.IniciarPedido(cliente);
             // Transferir items del pedido temporal al final
-            foreach(var item in pedido.Items) {
+            foreach (var item in pedido.Items)
+            {
                 pedidoFinal.AgregarProducto(item);
             }
             pedido = pedidoFinal;
-            
+
             // 5. Notificadores (Observer)
             pedido.Suscribir(new NotificadorCliente("SMS"));
             pedido.Suscribir(new NotificadorCumpleanos());
@@ -55,8 +56,8 @@ namespace Pizzeria
             // 6. Gestión de cocina (Command + State)
             Console.WriteLine("\n--- PROCESANDO PEDIDO EN COCINA ---");
             Cocina cocina = new Cocina();
-            
-            foreach(var item in pedido.Items)
+
+            foreach (var item in pedido.Items)
             {
                 if (item.Producto is Pizza p)
                 {
@@ -68,10 +69,10 @@ namespace Pizzeria
 
             // 7. Confirmación Final (Memento if needed, but here simple flow)
             Console.WriteLine("\n--- PAGO Y FACTURACIÓN ---");
-            IMedioPago medioPago = pagoService.SeleccionarMedioPago();
-            
+            IMedioPago medioPago = pagoService.SeleccionarMedioPago(pedido);
+
             var factura = facturacion.GenerarFactura(pedido, medioPago);
-            
+
             // Imprimir Factura Final Detallada
             factura.ImprimirFactura();
 
