@@ -1,0 +1,18 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# User-specific files
+*.userprefs
+*.pidb
+
+# macOS
+.DS_Store
